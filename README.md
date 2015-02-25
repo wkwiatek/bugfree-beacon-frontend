@@ -6,3 +6,13 @@ Before starting app make sure that bower components and node modules are up to d
 ```
 $ bower install && npm install
 ```
+
+To use application in development type:
+```
+$ gulp serve
+```
+
+Building for production usage:
+```
+$ gulp serve:dist
+```

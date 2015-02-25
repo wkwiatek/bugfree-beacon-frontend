@@ -2,13 +2,20 @@
 
 var gulp = require('gulp');
 
+var bower = require('gulp-bower');
+
 var paths = gulp.paths;
 
 var $ = require('gulp-load-plugins')({
   pattern: ['gulp-*', 'main-bower-files', 'uglify-save-license', 'del']
 });
 
-gulp.task('partials', function () {
+
+gulp.task('bower-install', function() {
+  return bower();
+});
+
+gulp.task('partials', ['bower-install'], function () {
   return gulp.src([
     paths.src + '/{app,components}/**/*.html',
     paths.tmp + '/{app,components}/**/*.html'
@@ -46,7 +53,7 @@ gulp.task('html', ['inject', 'partials'], function () {
     .pipe($.uglify({preserveComments: $.uglifySaveLicense}))
     .pipe(jsFilter.restore())
     .pipe(cssFilter)
-    .pipe($.replace('../bootstrap-sass-official/assets/fonts/bootstrap', 'fonts'))
+    .pipe($.replace('../bower_components/bootstrap-sass-official/assets/fonts/bootstrap', 'fonts'))
     .pipe($.csso())
     .pipe(cssFilter.restore())
     .pipe(assets.restore())
@@ -68,14 +75,14 @@ gulp.task('images', function () {
     .pipe(gulp.dest(paths.dist + '/assets/images/'));
 });
 
-gulp.task('fonts', function () {
+gulp.task('fonts', ['bower-install'], function () {
   return gulp.src($.mainBowerFiles())
     .pipe($.filter('**/*.{eot,svg,ttf,woff}'))
     .pipe($.flatten())
     .pipe(gulp.dest(paths.dist + '/fonts/'));
 });
 
-gulp.task('misc', function () {
+gulp.task('misc', ['bower-install'], function () {
   return gulp.src(paths.src + '/**/*.ico')
     .pipe(gulp.dest(paths.dist + '/'));
 });

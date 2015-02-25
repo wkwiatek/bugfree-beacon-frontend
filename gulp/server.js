@@ -2,6 +2,8 @@
 
 var gulp = require('gulp');
 
+var connect = require('gulp-connect');
+
 var paths = gulp.paths;
 
 var util = require('util');
@@ -9,6 +11,7 @@ var util = require('util');
 var browserSync = require('browser-sync');
 
 var middleware = require('./proxy');
+
 
 function browserSyncInit(baseDir, files, browser) {
   browser = browser === undefined ? 'default' : browser;
@@ -46,7 +49,11 @@ gulp.task('serve', ['watch'], function () {
 });
 
 gulp.task('serve:dist', ['build'], function () {
-  browserSyncInit(paths.dist);
+  connect.server({
+    root: [paths.dist],
+    port: process.env.PORT || 3000,
+    livereload: false
+  });
 });
 
 gulp.task('serve:e2e', ['inject'], function () {

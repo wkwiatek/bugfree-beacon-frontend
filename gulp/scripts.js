@@ -6,7 +6,7 @@ var paths = gulp.paths;
 
 var $ = require('gulp-load-plugins')();
 
-gulp.task('scripts', function () {
+gulp.task('scripts', ['bower-install'], function () {
   return gulp.src(paths.src + '/{app,components}/**/*.js')
     .pipe($.jshint())
     .pipe($.jshint.reporter('jshint-stylish'))
