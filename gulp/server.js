@@ -49,11 +49,7 @@ gulp.task('serve', ['watch'], function () {
 });
 
 gulp.task('serve:dist', ['build'], function () {
-  connect.server({
-    root: [paths.dist],
-    port: process.env.PORT || 3000,
-    livereload: false
-  });
+  browserSyncInit(paths.dist);
 });
 
 gulp.task('serve:e2e', ['inject'], function () {
