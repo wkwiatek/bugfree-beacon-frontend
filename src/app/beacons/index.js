@@ -9,7 +9,7 @@ var moduleName = 'app.beacons';
 angular.module(moduleName, [])
   .factory('BeaconsService', BeaconsService)
   .controller('BeaconsCtrl', BeaconsCtrl)
-  .config(function ($stateProvider, $urlRouterProvider) {
+  .config(($stateProvider) => {
     $stateProvider
       .state('beacons', {
         url: '/beacons',
@@ -17,15 +17,12 @@ angular.module(moduleName, [])
         controller: BeaconsCtrl,
         controllerAs: 'vm',
         resolve: {
-          beacons: function(BeaconsService) {
-            return BeaconsService.getBeacons().then(beacons => {
+          beacons: BeaconsService =>
+            BeaconsService.getBeacons().then(beacons => {
               return beacons;
-            });
-          }
+            })
         }
       });
-
-    $urlRouterProvider.otherwise('/');
   });
 
 export default moduleName;

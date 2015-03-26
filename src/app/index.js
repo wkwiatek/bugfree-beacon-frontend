@@ -4,6 +4,7 @@
 import MainCtrl from './main/main.controller';
 import NavbarCtrl from '../components/navbar/navbar.controller';
 import BeaconsModule from './beacons/index';
+import BeaconAddEditModule from './beacons/add-edit/index';
 
 angular.module('bugfreeBeaconFrontend', [
 
@@ -15,7 +16,8 @@ angular.module('bugfreeBeaconFrontend', [
   'ui.router',
   'ui.bootstrap',
 
-  BeaconsModule
+  BeaconsModule,
+  BeaconAddEditModule
 
 ])
   .controller('MainCtrl', MainCtrl)
