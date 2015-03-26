@@ -3,19 +3,32 @@
 
 import MainCtrl from './main/main.controller';
 import NavbarCtrl from '../components/navbar/navbar.controller';
+import BeaconsModule from './beacons/index';
 
-angular.module('bugfreeBeaconFrontend', ['ngAnimate', 'ngCookies', 'ngTouch', 'ngSanitize', 'restangular', 'ui.router', 'ui.bootstrap'])
+angular.module('bugfreeBeaconFrontend', [
+
+  'ngAnimate',
+  'ngCookies',
+  'ngTouch',
+  'ngSanitize',
+  'restangular',
+  'ui.router',
+  'ui.bootstrap',
+
+  BeaconsModule
+
+])
   .controller('MainCtrl', MainCtrl)
   .controller('NavbarCtrl', NavbarCtrl)
-  
-  .config(function ($stateProvider, $urlRouterProvider) {
-    $stateProvider
-      .state('home', {
-        url: '/',
-        templateUrl: 'app/main/main.html',
-        controller: 'MainCtrl'
-      });
 
-    $urlRouterProvider.otherwise('/');
+  .config(function ($stateProvider, $urlRouterProvider) {
+    // $stateProvider
+    //   .state('home', {
+    //     url: '/',
+    //     templateUrl: 'app/main/main.html',
+    //     controller: 'MainCtrl'
+    //   });
+
+    $urlRouterProvider.otherwise('/beacons');
   })
 ;
