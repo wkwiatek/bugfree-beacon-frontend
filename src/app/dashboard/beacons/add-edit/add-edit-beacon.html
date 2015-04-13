@@ -2,9 +2,10 @@
     <h3 class="modal-title">I'm a modal!</h3>
 </div>
 <div class="modal-body">
-    Hey baby!
+    <label for="major">Major</label>
+    <input ng-model="vm.beacon.data.major" name="major" type="text">
 </div>
 <div class="modal-footer">
     <button class="btn btn-primary" ng-click="vm.dismiss()">OK</button>
-    <button class="btn btn-warning" ng-click="cancel()">Cancel</button>
+    <button class="btn btn-warning" ng-click="vm.dismiss()">Cancel</button>
 </div>

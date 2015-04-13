@@ -5,6 +5,9 @@ class AddEditBeaconCtrl {
   constructor($scope, beacon) {
     let vm = this;
 
+    console.log(beacon);
+    vm.beacon = beacon;
+
     vm.dismiss = function() {
       $scope.$dismiss();
     };

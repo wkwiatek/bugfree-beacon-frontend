@@ -11,16 +11,14 @@ angular.module(moduleName, [])
   .controller('BeaconsCtrl', BeaconsCtrl)
   .config(($stateProvider) => {
     $stateProvider
-      .state('beacons', {
+      .state('dashboard.beacons', {
         url: '/beacons',
-        templateUrl: 'app/beacons/beacons.html',
+        templateUrl: 'app/dashboard/beacons/beacons.html',
         controller: BeaconsCtrl,
         controllerAs: 'vm',
         resolve: {
           beacons: BeaconsService =>
-            BeaconsService.getBeacons().then(beacons => {
-              return beacons;
-            })
+            BeaconsService.getBeacons().then(beacons => beacons)
         }
       });
   });

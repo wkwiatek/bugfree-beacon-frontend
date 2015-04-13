@@ -9,21 +9,23 @@ angular.module(moduleName, [])
   .controller('AddEditBeaconCtrl', AddEditBeaconCtrl)
   .config(($stateProvider) => {
     $stateProvider
-      .state('beacons.add-edit', {
+      .state('dashboard.beacons.add-edit', {
         url: '/add-edit/:id',
         onEnter: ($stateParams, $state, $modal) => {
           $modal.open({
-            templateUrl: 'app/beacons/add-edit/add-edit-beacon.html',
+            templateUrl: 'app/dashboard/beacons/add-edit/add-edit-beacon.html',
             resolve: {
-              beacon: () => {
-                return { bejkon : 'asdasdqwe'};
+              beacon: (BeaconsService) => {
+                console.log('asdqwenqweq');
+                console.log($stateParams.id);
+                return BeaconsService.getBeacon($stateParams.id).then(beacon => beacon);
               }
             },
             controller: AddEditBeaconCtrl,
             controllerAs: 'vm'
           }).result.then(
-            result => $state.transitionTo('beacons'),
-            err => $state.transitionTo('beacons')
+            () => $state.transitionTo('dashboard.beacons'),
+            () => $state.transitionTo('dashboard.beacons')
           );
         }
       });
