@@ -2,22 +2,28 @@
 /*jshint esnext: true */
 
 class AddEditBeaconCtrl {
-  constructor($scope, beacon) {
+  constructor($scope, beacon, BeaconsService) {
     let vm = this;
 
-    console.log(beacon);
     vm.beacon = beacon;
 
     vm.dismiss = function() {
       $scope.$dismiss();
     };
 
-    $scope.save = function() {
-
+    vm.save = function() {
+      if (beacon) {
+        BeaconsService.editBeacon(vm.beacon.id, vm.beacon);
+      }
+      else {
+        BeaconsService.addBeacon(vm.beacon).then(() => {
+          $scope.$dismiss();
+        });
+      }
     };
   }
 }
 
-AddEditBeaconCtrl.$inject = ['$scope', 'beacon'];
+AddEditBeaconCtrl.$inject = ['$scope', 'beacon', 'BeaconsService'];
 
 export default AddEditBeaconCtrl;

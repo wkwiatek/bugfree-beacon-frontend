@@ -13,7 +13,17 @@ class BeaconsService {
   }
 
   getBeacon(id) {
-    return this.$http.get(this.baseResourceUrl + '/beacon/' + id )
+    return this.$http.get(this.baseResourceUrl + '/beacon/' + id)
+      .then(result => result.data);
+  }
+
+  addBeacon(beacon) {
+    return this.$http.post(this.baseResourceUrl + '/beacon', beacon)
+      .then(result => result.data);
+  }
+
+  editBeacon(id, beacon) {
+    return this.$http.put(this.baseResourceUrl + '/beacon/' + id, beacon)
       .then(result => result.data);
   }
 

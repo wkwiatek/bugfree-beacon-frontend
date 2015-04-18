@@ -1,11 +1,25 @@
 <div class="modal-header">
-    <h3 class="modal-title">I'm a modal!</h3>
+    <h3 class="modal-title">Edit beacon</h3>
 </div>
 <div class="modal-body">
-    <label for="major">Major</label>
-    <input ng-model="vm.beacon.data.major" name="major" type="text">
+
+    <label for="title">Title</label>
+    <input ng-model="vm.beacon.data.title" name="title" type="text">
+
+    <label for="subtitle">Subtitle</label>
+    <input ng-model="vm.beacon.data.subtitle" name="subtitle" type="text">
+
+    <label for="content">Content</label>
+    <input ng-model="vm.beacon.data.content" name="content" type="text">
+
+    <label for="detailsUrl">Details Url</label>
+    <input ng-model="vm.beacon.data.detailsUrl" name="detailsUrl" type="text">
+
+    <label for="imageUrl">Image Url</label>
+    <input ng-model="vm.beacon.data.imageUrl" name="imageUrl" type="text">
+
 </div>
 <div class="modal-footer">
-    <button class="btn btn-primary" ng-click="vm.dismiss()">OK</button>
+    <button class="btn btn-primary" ng-click="vm.save()">Save</button>
     <button class="btn btn-warning" ng-click="vm.dismiss()">Cancel</button>
 </div>
