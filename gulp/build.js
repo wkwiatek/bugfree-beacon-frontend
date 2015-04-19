@@ -11,7 +11,7 @@ var $ = require('gulp-load-plugins')({
 });
 
 
-gulp.task('bower-install', function() {
+gulp.task('bower-install', ['clean'], function() {
   return bower();
 });
 
@@ -70,7 +70,7 @@ gulp.task('html', ['inject', 'partials'], function () {
     .pipe($.size({ title: paths.dist + '/', showFiles: true }));
 });
 
-gulp.task('images', function () {
+gulp.task('images', ['clean'], function () {
   return gulp.src(paths.src + '/assets/images/**/*')
     .pipe(gulp.dest(paths.dist + '/assets/images/'));
 });
