@@ -10,17 +10,17 @@ gulp.task('scripts', ['bower-install'], function () {
   return gulp.src(paths.src + '/{app,components}/**/*.js')
     .pipe($.jshint())
     .pipe($.jshint.reporter('jshint-stylish'))
-    .pipe($['6to5']())
+    .pipe($['babel']())
     .on('error', function handleError(err) {
       console.error(err.toString());
       this.emit('end');
     })
-    .pipe(gulp.dest(paths.tmp + '/6to5'))
+    .pipe(gulp.dest(paths.tmp + '/babel'))
     .pipe($.size())
 });
 
 gulp.task('browserify', ['scripts'], function () {
-  return gulp.src(paths.tmp + '/6to5/app/index.js', { read: false })
+  return gulp.src(paths.tmp + '/babel/app/index.js', { read: false })
     .pipe($.browserify())
     .on('error', function handleError(err) {
       console.error(err.toString());

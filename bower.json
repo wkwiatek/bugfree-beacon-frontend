@@ -2,20 +2,20 @@
   "name": "bugfreeBeaconFrontend",
   "version": "0.0.0",
   "dependencies": {
-    "angular-animate": "~1.3.4",
-    "angular-cookies": "~1.3.4",
-    "angular-touch": "~1.3.4",
-    "angular-sanitize": "~1.3.4",
+    "angular-animate": "~v1.4.0-beta.6",
+    "angular-cookies": "~v1.4.0-beta.6",
+    "angular-touch": "~v1.4.0-beta.6",
+    "angular-sanitize": "~v1.4.0-beta.6",
     "restangular": "~1.4.0",
     "angular-ui-router": "~0.2.13",
     "bootstrap-sass-official": "~3.3.1",
     "angular-bootstrap": "0.12.x",
-    "angular": "~1.3.4"
+    "angular": "~v1.4.0-beta.6"
   },
   "devDependencies": {
-    "angular-mocks": "~1.3.4"
+    "angular-mocks": "~v1.4.0-beta.6"
   },
   "resolutions": {
-    "angular": "~1.3.4"
+    "angular": "~v1.4.0-beta.6"
   }
 }

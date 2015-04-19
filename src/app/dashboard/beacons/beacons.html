@@ -1,0 +1,21 @@
+
+  <a ui-sref="dashboard.beacons.add">Add beacon</a>
+
+  <table class="table table-bordered">
+    <thead>
+      <tr>
+        <th>Beacon ID</th>
+        <th>Basic info</th>
+        <th>Image url</th>
+        <th>Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr ng-repeat="beacon in vm.beacons">
+        <td>{{ beacon.id }}</td>
+        <td>{{ beacon.data.carMake + ' ' + beacon.data.carModel }}</td>
+        <td><img class="thumbnail" ng-src="{{ beacon.data.imageUrl }}" alt="{{ beacon.data.carModel }}"></td>
+        <td><a ui-sref="dashboard.beacons.edit({id: beacon.id})">Edit</a></td>
+      </tr>
+    </tbody>
+  </table>
