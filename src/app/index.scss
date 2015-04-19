@@ -6,11 +6,17 @@
 }
 
 .thumbnail {
-  height: 200px;
+  height: 100px;
 
   img.pull-right {
     width: 50px;
   }
 }
+
+/**
+ * Required to work with angular as some of elements relies on empty href attribute
+ */
+.nav, .pagination, .carousel, .panel-title, a { cursor: pointer; }
+
 // injector
 // endinjector
