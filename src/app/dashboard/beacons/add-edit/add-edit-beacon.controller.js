@@ -7,6 +7,13 @@ class AddEditBeaconCtrl {
 
     vm.beacon = beacon;
 
+    vm.headerText = beacon ? 'Edit' : 'Add';
+
+    vm.templateTypes = [{
+      value: 'ROUNDED_IMAGE',
+      name: 'Rounded image'
+    }];
+
     vm.dismiss = function() {
       $scope.$dismiss();
     };
