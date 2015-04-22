@@ -1,21 +1,25 @@
 
-  <a ui-sref="dashboard.beacons.add">Add beacon</a>
+<a ui-sref="dashboard.beacons.add" class="pull-right btn btn-success">
+  <i class="glyphicon-plus"></i> Add beacon
+</a>
 
-  <table class="table table-bordered">
-    <thead>
-      <tr>
-        <th>Beacon ID</th>
-        <th>Basic info</th>
-        <th>Image url</th>
-        <th>Actions</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr ng-repeat="beacon in vm.beacons">
-        <td>{{ beacon.id }}</td>
-        <td>{{ beacon.data.carMake + ' ' + beacon.data.carModel }}</td>
-        <td><img class="thumbnail" ng-src="{{ beacon.data.imageUrl }}" alt="{{ beacon.data.carModel }}"></td>
-        <td><a ui-sref="dashboard.beacons.edit({id: beacon.id})">Edit</a></td>
-      </tr>
-    </tbody>
-  </table>
+<div class="clearfix"></div>
+
+<table class="table table-striped vert-align-cells mt-md">
+  <thead>
+    <tr>
+      <th></th>
+      <th>Title</th>
+      <th>Subtitle</th>
+      <th>Actions</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr ng-repeat="beacon in vm.beacons">
+      <td><img class="thumbnail" ng-src="{{ beacon.data.imageUrl }}" alt="{{ beacon.data.carModel }}"></td>
+      <td>{{ beacon.data.title }}</td>
+      <td>{{ beacon.data.subtitle }}</td>
+      <td><a ui-sref="dashboard.beacons.edit({id: beacon.id})" class="btn btn-default">Edit</a></td>
+    </tr>
+  </tbody>
+</table>
