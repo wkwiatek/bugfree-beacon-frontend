@@ -11,7 +11,13 @@ class AddEditBeaconCtrl {
 
     vm.templateTypes = [{
       value: 'ROUNDED_IMAGE',
-      name: 'Rounded image'
+      image: 'ROUNDED_IMAGE.png'
+    }, {
+      value: 'SQUARED_IMAGE',
+      image: 'SQUARED_IMAGE.png'
+    }, {
+      value: 'SQUARED_IMAGE_ALIGN_LEFT',
+      image: 'SQUARED_IMAGE_ALIGN_LEFT.png'
     }];
 
     vm.dismiss = function() {
