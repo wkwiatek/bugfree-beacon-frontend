@@ -1,25 +1,110 @@
-<div class="modal-header">
-    <h3 class="modal-title">Edit beacon</h3>
-</div>
-<div class="modal-body">
+<form class="form-horizontal" ng-submit="vm.save()">
+  <div class="modal-header">
+    <h3 class="modal-title">{{ vm.headerText }} beacon</h3>
+  </div>
+  <div class="modal-body">
 
-    <label for="title">Title</label>
-    <input ng-model="vm.beacon.data.title" name="title" type="text">
+    <h4 class="text-center">Beacon info</h4>
 
-    <label for="subtitle">Subtitle</label>
-    <input ng-model="vm.beacon.data.subtitle" name="subtitle" type="text">
+    <div class="form-group">
+      <label for="uuid" class="col-sm-3 control-label">UUID</label>
+      <div class="col-sm-9">
+        <input ng-model="vm.beacon.uuid" class="form-control" name="uuid" type="text" required>
+      </div>
+    </div>
 
-    <label for="content">Content</label>
-    <input ng-model="vm.beacon.data.content" name="content" type="text">
+    <div class="form-group">
+      <label for="major" class="col-sm-3 control-label">Major</label>
+      <div class="col-sm-9">
+        <input ng-model="vm.beacon.major" class="form-control" name="major" type="number" maxlength="5" required>
+      </div>
+    </div>
 
-    <label for="detailsUrl">Details Url</label>
-    <input ng-model="vm.beacon.data.detailsUrl" name="detailsUrl" type="text">
+    <div class="form-group">
+      <label for="minor" class="col-sm-3 control-label">Minor</label>
+      <div class="col-sm-9">
+        <input ng-model="vm.beacon.minor" class="form-control" name="minor" type="number" maxlength="5" required>
+      </div>
+    </div>
 
-    <label for="imageUrl">Image Url</label>
-    <input ng-model="vm.beacon.data.imageUrl" name="imageUrl" type="text">
+    <h4 class="text-center">Offer details</h4>
 
-</div>
-<div class="modal-footer">
-    <button class="btn btn-primary" ng-click="vm.save()">Save</button>
+    <div class="form-group">
+      <label for="title" class="col-sm-3 control-label">Title</label>
+      <div class="col-sm-9">
+        <input ng-model="vm.beacon.data.title" class="form-control" name="title" type="text" required>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label for="subtitle" class="col-sm-3 control-label">Subtitle</label>
+      <div class="col-sm-9">
+        <input ng-model="vm.beacon.data.subtitle" class="form-control" name="subtitle" type="text" required>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label for="content" class="col-sm-3 control-label">Content</label>
+      <div class="col-sm-9">
+        <textarea ng-model="vm.beacon.data.content" class="form-control" name="content" type="text" rows="3" required></textarea>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label for="detailsUrl" class="col-sm-3 control-label">Details Url</label>
+      <div class="col-sm-9">
+        <input ng-model="vm.beacon.data.detailsUrl" class="form-control" name="detailsUrl" type="text" required>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label for="imageUrl" class="col-sm-3 control-label">Image Url</label>
+      <div class="col-sm-9">
+        <input ng-model="vm.beacon.data.imageUrl" class="form-control" name="imageUrl" type="text" required>
+      </div>
+    </div>
+
+    <h4 class="text-center">Offer template</h4>
+
+    <div class="form-group">
+      <label for="imageUrl" class="col-sm-3 control-label">Template</label>
+      <div class="col-sm-9">
+        <select ng-model="vm.beacon.template.type" ng-options="templateType.value as templateType.name for templateType in vm.templateTypes" name="templateType" required></select>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label for="titleColor" class="col-sm-3 control-label">Title color</label>
+      <div class="col-sm-9">
+        <input ng-model="vm.beacon.template.titleColor" class="form-control" name="titleColor" type="color" required>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label for="subtitleColor" class="col-sm-3 control-label">Subtitle color</label>
+      <div class="col-sm-9">
+        <input ng-model="vm.beacon.template.subtitleColor" class="form-control" name="subtitleColor" type="color" required>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label for="contentColor" class="col-sm-3 control-label">Content color</label>
+      <div class="col-sm-9">
+        <input ng-model="vm.beacon.template.contentColor" class="form-control" name="contentColor" type="color" required>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label for="backgroundColor" class="col-sm-3 control-label">Background color</label>
+      <div class="col-sm-9">
+        <input ng-model="vm.beacon.template.backgroundColor" class="form-control" name="backgroundColor" type="color" required>
+      </div>
+    </div>
+
+
+  </div>
+  <div class="modal-footer">
+    <button type="submit" class="btn btn-primary">Submit</button>
     <button class="btn btn-warning" ng-click="vm.dismiss()">Cancel</button>
-</div>
+  </div>
+</form>
