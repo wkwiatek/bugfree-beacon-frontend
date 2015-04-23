@@ -69,7 +69,7 @@
     <div class="form-group">
       <label class="col-sm-3 control-label">Template</label>
       <label ng-repeat="templateType in vm.templateTypes" class="col-sm-3 text-center">
-        <img src="assets/images/{{templateType.image}}" class="img-template">
+        <img ng-src="assets/images/{{templateType.image}}" class="img-template">
         <br>
         <input ng-model="vm.beacon.template.type" name="templateType" type="radio" value="{{templateType.value}}">
       </label>
