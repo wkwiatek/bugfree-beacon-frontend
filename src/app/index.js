@@ -18,6 +18,7 @@ angular.module('bugfreeBeaconFrontend', [
   'restangular',
   'ui.router',
   'ui.bootstrap',
+  'colorpicker.module',
 
   BeaconsModule,
   BeaconAddEditModule

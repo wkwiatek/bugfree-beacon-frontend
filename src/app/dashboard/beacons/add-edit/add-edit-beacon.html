@@ -69,7 +69,7 @@
     <div class="form-group">
       <label class="col-sm-3 control-label">Template</label>
       <label ng-repeat="templateType in vm.templateTypes" class="col-sm-3 text-center">
-        <img src="assets/images/{{templateType.image}}" class="img-template">
+        <img ng-src="assets/images/{{templateType.image}}" class="img-template">
         <br>
         <input ng-model="vm.beacon.template.type" name="templateType" type="radio" value="{{templateType.value}}">
       </label>
@@ -78,28 +78,28 @@
     <div class="form-group">
       <label for="titleColor" class="col-sm-3 control-label">Title color</label>
       <div class="col-sm-9">
-        <input ng-model="vm.beacon.template.titleColor" class="form-control" name="titleColor" type="color" required>
+        <input colorpicker colorpicker-parent="true" colorpicker-position="right" ng-model="vm.beacon.template.titleColor" ng-style="{'backgroundColor': vm.beacon.template.titleColor}" class="form-control" name="titleColor" type="text" required>
       </div>
     </div>
 
     <div class="form-group">
       <label for="subtitleColor" class="col-sm-3 control-label">Subtitle color</label>
       <div class="col-sm-9">
-        <input ng-model="vm.beacon.template.subtitleColor" class="form-control" name="subtitleColor" type="color" required>
+        <input colorpicker colorpicker-parent="true" colorpicker-position="right" ng-model="vm.beacon.template.subtitleColor" ng-style="{'backgroundColor': vm.beacon.template.subtitleColor}" class="form-control" name="subtitleColor" type="text" required>
       </div>
     </div>
 
     <div class="form-group">
       <label for="contentColor" class="col-sm-3 control-label">Content color</label>
       <div class="col-sm-9">
-        <input ng-model="vm.beacon.template.contentColor" class="form-control" name="contentColor" type="color" required>
+        <input colorpicker colorpicker-parent="true" colorpicker-position="right" ng-model="vm.beacon.template.contentColor" ng-style="{'backgroundColor': vm.beacon.template.contentColor}" class="form-control" name="contentColor" type="text" required>
       </div>
     </div>
 
     <div class="form-group">
       <label for="backgroundColor" class="col-sm-3 control-label">Background color</label>
       <div class="col-sm-9">
-        <input ng-model="vm.beacon.template.backgroundColor" class="form-control" name="backgroundColor" type="color" required>
+        <input colorpicker colorpicker-parent="true" colorpicker-position="right" ng-model="vm.beacon.template.backgroundColor" ng-style="{'backgroundColor': vm.beacon.template.backgroundColor}" class="form-control" name="backgroundColor" type="text" required>
       </div>
     </div>
 

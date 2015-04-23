@@ -26,7 +26,9 @@ class AddEditBeaconCtrl {
 
     vm.save = function() {
       if (beacon) {
-        BeaconsService.editBeacon(vm.beacon.id, vm.beacon);
+        BeaconsService.editBeacon(vm.beacon.id, vm.beacon).then(() => {
+          $scope.$dismiss();
+        });
       }
       else {
         BeaconsService.addBeacon(vm.beacon).then(() => {
