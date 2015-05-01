@@ -1,5 +1,6 @@
 'use strict';
 /*jshint esnext: true */
+/*global FormData: true */
 
 class BeaconsService {
   constructor($http, BASE_RESOURCE_URL) {
@@ -24,6 +25,20 @@ class BeaconsService {
 
   editBeacon(id, beacon) {
     return this.$http.put(this.baseResourceUrl + '/beacon/' + id, beacon)
+      .then(result => result.data);
+  }
+
+  addImageToBeacon(id, file) {
+    var fd = new FormData();
+    fd.append('file', file);
+    return this.$http.post(
+      this.baseResourceUrl + '/beacon/' + id + '/photo',
+      fd,
+      {
+        transformRequest: angular.identity,
+        headers: {'Content-Type': undefined }
+      }
+    )
       .then(result => result.data);
   }
 
