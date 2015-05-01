@@ -20,8 +20,8 @@ angular.module(moduleName, [])
             controller: AddEditBeaconCtrl,
             controllerAs: 'vm'
           }).result.then(
-            () => $state.transitionTo('dashboard.beacons'),
-            () => $state.transitionTo('dashboard.beacons')
+            () => $state.transitionTo('dashboard.beacons', {}, { reload: true }),
+            () => $state.transitionTo('dashboard.beacons', {}, { reload: true })
           );
         }
       })
@@ -36,8 +36,8 @@ angular.module(moduleName, [])
             controller: AddEditBeaconCtrl,
             controllerAs: 'vm'
           }).result.then(
-            () => $state.transitionTo('dashboard.beacons'),
-            () => $state.transitionTo('dashboard.beacons')
+            () => $state.transitionTo('dashboard.beacons', {}, { reload: true }),
+            () => $state.transitionTo('dashboard.beacons', {}, { reload: true })
           );
         }
       });
