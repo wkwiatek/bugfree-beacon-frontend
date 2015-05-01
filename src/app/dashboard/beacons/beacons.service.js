@@ -28,6 +28,11 @@ class BeaconsService {
       .then(result => result.data);
   }
 
+  removeBeacon(id) {
+    return this.$http.delete(this.baseResourceUrl + '/beacon/' + id)
+      .then(result => result.data);
+  }
+
   addImageToBeacon(id, file) {
     var fd = new FormData();
     fd.append('file', file);
