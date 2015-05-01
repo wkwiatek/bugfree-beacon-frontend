@@ -20,22 +20,35 @@ class AddEditBeaconCtrl {
       image: 'SQUARED_IMAGE_ALIGN_LEFT.png'
     }];
 
-    vm.dismiss = function() {
+    vm.dismiss = () => {
       $scope.$dismiss();
     };
 
-    vm.save = function() {
+    vm.save = () => {
       if (beacon) {
-        BeaconsService.editBeacon(vm.beacon.id, vm.beacon).then(() => {
-          $scope.$dismiss();
+        BeaconsService.editBeacon(vm.beacon.id, vm.beacon).then(beacon => {
+          if (vm.image) {
+            BeaconsService.addImageToBeacon(beacon.data.id, vm.image).then(() => {
+              $scope.$dismiss();
+            });
+          } else {
+            $scope.$dismiss();
+          }
         });
       }
       else {
-        BeaconsService.addBeacon(vm.beacon).then(() => {
-          $scope.$dismiss();
+        BeaconsService.addBeacon(vm.beacon).then(beacon => {
+          if (vm.image) {
+            BeaconsService.addImageToBeacon(beacon.data.id, vm.image).then(() => {
+              $scope.$dismiss();
+            });
+          } else {
+            $scope.$dismiss();
+          }
         });
       }
     };
+
   }
 }
 

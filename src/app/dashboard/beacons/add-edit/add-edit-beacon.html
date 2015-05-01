@@ -60,7 +60,7 @@
     <div class="form-group">
       <label for="imageUrl" class="col-sm-3 control-label">Image Url</label>
       <div class="col-sm-9">
-        <input ng-model="vm.beacon.data.imageUrl" class="form-control" name="imageUrl" type="text" required>
+        <input file-model="vm.image" class="form-control" name="imageUrl" type="file" required>
       </div>
     </div>
 
@@ -103,10 +103,9 @@
       </div>
     </div>
 
-
   </div>
   <div class="modal-footer">
-    <button class="btn btn-primary">Submit</button>
     <a class="btn btn-warning" ng-click="vm.dismiss()">Cancel</a>
+    <button class="btn btn-primary">Submit</button>
   </div>
 </form>
