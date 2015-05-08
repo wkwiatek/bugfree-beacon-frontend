@@ -6,6 +6,7 @@ class AddEditBeaconCtrl {
     let vm = this;
 
     vm.beacon = beacon;
+    vm.baseResourceUrl = BeaconsService.baseResourceUrl;
 
     vm.headerText = beacon ? 'Edit' : 'Add';
 
