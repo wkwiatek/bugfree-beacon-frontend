@@ -16,7 +16,9 @@
   </thead>
   <tbody>
     <tr ng-repeat="beacon in vm.beacons">
-      <td><img class="thumbnail" ng-src="{{ beacon.data.imageUrl }}" alt="{{ beacon.data.carModel }}"></td>
+      <td>
+        <img class="thumbnail" ng-src="{{ beacon.data.imageUrl + '?' + vm.time }}" alt="{{ beacon.data.carModel }}">
+      </td>
       <td>{{ beacon.data.title }}</td>
       <td>{{ beacon.data.subtitle }}</td>
       <td>

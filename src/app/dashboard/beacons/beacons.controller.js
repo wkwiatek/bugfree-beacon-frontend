@@ -6,6 +6,8 @@ class BeaconsCtrl {
     let vm = this;
     vm.beacons = beacons;
 
+    vm.time = new Date().getTime();
+
     vm.removeBeacon = id => {
       if ($window.confirm('Are you sure?')) {
         BeaconsService.removeBeacon(id).then(
