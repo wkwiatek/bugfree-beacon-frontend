@@ -5,6 +5,8 @@ class AddEditBeaconCtrl {
   constructor($scope, beacon, BeaconsService) {
     let vm = this;
 
+    vm.time = new Date().getTime();
+
     vm.beacon = beacon;
     vm.baseResourceUrl = BeaconsService.baseResourceUrl;
 
