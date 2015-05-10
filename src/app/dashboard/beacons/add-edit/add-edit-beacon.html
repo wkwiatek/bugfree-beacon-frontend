@@ -61,7 +61,7 @@
       <label for="imageUrl" class="col-sm-3 control-label">Image Url</label>
       <div class="col-sm-9">
         <div ng-if="vm.beacon.data.imageUrl">
-          <img ng-if="!vm.image" ng-src="{{ vm.beacon.data.imageUrl + '?' + vm.time }}" class="thumbnail">
+          <img ng-if="!vm.image" ng-src="{{ vm.beacon.data.imageUrl }}" class="thumbnail">
           <input file-model="vm.image" class="form-control" name="imageUrl" type="file">
         </div>
         <div ng-if="!vm.beacon.data.imageUrl">
