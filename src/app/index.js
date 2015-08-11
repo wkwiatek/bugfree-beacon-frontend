@@ -5,7 +5,7 @@
   require('angular');
   require('angular-route');
   require('angular-animate');
-  var mainCtrl = require('./controllers/mainctrl');
+  var mainCtrl = require('./js/controllers/mainctrl');
 
   angular.module('SampleApp', ['ngRoute', 'ngAnimate'])
 
@@ -17,7 +17,7 @@
       // routes
       $routeProvider
         .when("/", {
-          templateUrl: "./partials/partial1.html",
+          templateUrl: "./app/partials/partial1.html",
           controller: "MainController"
         })
         .otherwise({
