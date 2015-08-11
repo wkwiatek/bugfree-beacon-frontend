@@ -9,6 +9,8 @@ var minifyCSS = require('gulp-minify-css');
 var clean = require('gulp-clean');
 var browserify = require('gulp-browserify');
 var concat = require('gulp-concat');
+var less = require('gulp-less');
+var path = require('path');
 
 // tasks
 gulp.task('lint', function() {
@@ -23,7 +25,7 @@ gulp.task('clean', function() {
     gulp.src('./src/app/bundled.js')
       .pipe(clean({force: true}));
 });
-gulp.task('minify-css', function() {
+gulp.task('minify-css', ['less'], function() {
   var opts = {comments:true,spare:true};
   gulp.src(['./src/assets/**/*.css', '!./src/app/bower_components/**'])
     .pipe(minifyCSS(opts))
@@ -75,11 +77,18 @@ gulp.task('browserifyDist', function() {
   .pipe(concat('bundled.js'))
   .pipe(gulp.dest('./dist/app'))
 });
+gulp.task('less', function () {
+  return gulp.src('src/assets/less/**/*.less')
+    .pipe(less({
+      paths: [ path.join(__dirname, 'less', 'includes') ]
+    }))
+    .pipe(gulp.dest('src/assets/css'));
+});
 
 
 // default task
 gulp.task('default',
-  ['lint', 'browserify', 'connect']
+  ['lint', 'browserify', 'connect', 'less']
 );
 // build task
 gulp.task('build',
