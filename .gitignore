@@ -1,7 +1,7 @@
 node_modules/
-bower_components/
-.sass-cache/
-.tmp/
-dist/
-.idea/
-*iml
+app/bower_components/
+npm-debug.log
+.DS_Store
+dist
+.idea
+.tmp
