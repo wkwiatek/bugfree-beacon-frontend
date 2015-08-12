@@ -14,6 +14,7 @@
     '$routeProvider',
     function($locationProvider, $routeProvider) {
       $locationProvider.hashPrefix('!');
+
       // routes
       $routeProvider
         .when("/", {
