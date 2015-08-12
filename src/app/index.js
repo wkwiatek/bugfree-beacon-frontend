@@ -1,33 +1,14 @@
-(function () {
+'use strict';
 
-  'use strict';
+require('angular');
+require('angular-route');
+require('angular-animate');
+require('angular-resource');
 
-  require('angular');
-  require('angular-route');
-  require('angular-animate');
-  var mainCtrl = require('./js/controllers/mainctrl');
+angular.module('app', [
+  'ngRoute',
+  'ngAnimate',
 
-  angular.module('SampleApp', ['ngRoute', 'ngAnimate'])
-
-  .config([
-    '$locationProvider',
-    '$routeProvider',
-    function($locationProvider, $routeProvider) {
-      $locationProvider.hashPrefix('!');
-
-      // routes
-      $routeProvider
-        .when("/", {
-          templateUrl: "./app/partials/partial1.html",
-          controller: "MainController"
-        })
-        .otherwise({
-           redirectTo: '/'
-        });
-    }
-  ])
-
-  //Load controller
-  .controller('MainController', ['$scope', mainCtrl]);
-
-}());
+  require('./admin/').name
+])
+.config(require('./config'));

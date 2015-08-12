@@ -50,6 +50,8 @@ gulp.task('copy-html-files', function () {
 gulp.task('connect', function () {
   connect.server({
     root: 'src/',
+    livereload: true,
+    fallback: 'src/index.html',
     port: 8888
   });
 });
