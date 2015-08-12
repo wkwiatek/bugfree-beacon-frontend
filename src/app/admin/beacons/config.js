@@ -1,11 +1,12 @@
 'use strict';
 
-function config($routeProvider) {
-  $routeProvider
-    .when('/beacons', {
-      templateUrl: 'app/admin/beacons/_views/beacons.view.html',
-      controller: 'BeaconsController'
-    });
+function config($stateProvider) {
+  $stateProvider.state('beacons', {
+    url: '/beacons',
+    templateUrl: 'app/admin/beacons/_views/beacons.view.html',
+    controller: 'BeaconsController',
+    controllerAs: 'vm'
+  });
 }
 
 module.exports = config;

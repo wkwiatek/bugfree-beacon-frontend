@@ -1,13 +1,13 @@
 'use strict';
 
 require('angular');
-require('angular-route');
 require('angular-animate');
 require('angular-resource');
+require('angular-ui-router');
 
 angular.module('app', [
-  'ngRoute',
   'ngAnimate',
+  'ui.router',
 
   require('./admin/').name
 ])

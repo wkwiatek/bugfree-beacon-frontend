@@ -1,15 +1,12 @@
 'use strict';
 
-function config($locationProvider, $routeProvider) {
+function config($locationProvider, $urlRouterProvider) {
   $locationProvider.html5Mode({
     enabled: true,
     requireBase: false
   });
 
-  $routeProvider
-    .otherwise({
-      redirectTo: '/beacons'
-    });
+  $urlRouterProvider.otherwise('beacons');
 }
 
 module.exports = config;
