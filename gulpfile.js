@@ -94,5 +94,5 @@ gulp.task('default',
 );
 // build task
 gulp.task('build',
-  ['lint', 'minify-css', 'browserifyDist', 'copy-html-files', 'copy-bower-components', 'connectDist']
+  ['lint', 'minify-css', 'browserifyDist', 'copy-html-files', 'copy-bower-components']
 );
