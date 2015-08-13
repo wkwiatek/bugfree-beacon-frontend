@@ -4,7 +4,7 @@ function BeaconsController() {
 
   var vm = this;
 
-  vm.test = 'test';
+  vm.content = 'Beacons content (from controller)';
 
 }
 
