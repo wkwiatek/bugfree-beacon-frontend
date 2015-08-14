@@ -11,6 +11,7 @@ var browserify = require('gulp-browserify');
 var concat = require('gulp-concat');
 var less = require('gulp-less');
 var path = require('path');
+var bower = require('gulp-bower');
 
 // tasks
 gulp.task('lint', function() {
@@ -43,7 +44,7 @@ gulp.task('minify-js', function() {
     }))
     .pipe(gulp.dest('./dist/app'))
 });
-gulp.task('copy-bower-components', function () {
+gulp.task('copy-bower-components', ['bower'], function () {
   gulp.src('./src/app/bower_components/**')
     .pipe(gulp.dest('dist/app/bower_components'));
 });
@@ -90,11 +91,14 @@ gulp.task('less', function () {
     }))
     .pipe(gulp.dest('src/assets/css'));
 });
+gulp.task('bower', function() {
+  return bower();
+});
 
 
 // default task
 gulp.task('default',
-  ['lint', 'browserify', 'connect', 'less']
+  ['lint', 'bower', 'browserify', 'connect', 'less']
 );
 // build task
 gulp.task('build',
