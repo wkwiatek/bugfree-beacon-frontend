@@ -4,7 +4,7 @@ function ApplicationController() {
 
   var vm = this;
 
-  vm.test = 'test';
+  vm.content = 'Application content (from controller)';
 
 }
 

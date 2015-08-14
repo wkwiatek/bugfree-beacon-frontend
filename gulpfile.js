@@ -25,6 +25,10 @@ gulp.task('clean', function() {
     gulp.src('./src/app/bundled.js')
       .pipe(clean({force: true}));
 });
+gulp.task('copy-assets', function(){
+  gulp.src(['./src/assets/**/*', '!./src/assets/**/*.css'])
+      .pipe(gulp.dest('dist/assets/'));
+});
 gulp.task('minify-css', ['less'], function() {
   var opts = {comments:true,spare:true};
   gulp.src(['./src/assets/**/*.css', '!./src/app/bower_components/**'])
@@ -94,5 +98,5 @@ gulp.task('default',
 );
 // build task
 gulp.task('build',
-  ['lint', 'minify-css', 'browserifyDist', 'copy-html-files', 'copy-bower-components']
+  ['lint', 'minify-css', 'copy-assets', 'browserifyDist', 'copy-html-files', 'copy-bower-components']
 );

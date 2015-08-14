@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html ng-app="app">
+<html ng-app="app" ng-cloak>
   <head lang="en">
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -167,10 +167,10 @@
           <!-- Optionally, you can add icons to the links -->
           <li ui-sref-active="active"><a ui-sref="beacons"><i class="fa fa-bold"></i> <span>Beacons</span></a></li>
           <li ui-sref-active="active"><a ui-sref="application"><i class="fa fa-mobile"></i> <span>Application</span></a></li>
-          <li><a href="#"><i class="fa fa-shopping-cart"></i> <span>Order beacons</span></a></li>
-          <li><a href="#"><i class="fa fa-check-square-o"></i> <span>Payments</span></a></li>
-          <li><a href="#"><i class="fa fa-clipboard"></i> <span>Orders</span></a></li>
-          <li><a href="#"><i class="fa fa-cogs"></i> <span>Settings</span></a></li>
+          <li ui-sref-active="active"><a ui-sref="order-beacons"><i class="fa fa-shopping-cart"></i> <span>Order beacons</span></a></li>
+          <li ui-sref-active="active"><a ui-sref="payments"><i class="fa fa-check-square-o"></i> <span>Payments</span></a></li>
+          <li ui-sref-active="active"><a ui-sref="orders"><i class="fa fa-clipboard"></i> <span>Orders</span></a></li>
+          <li ui-sref-active="active"><a ui-sref="settings"><i class="fa fa-cogs"></i> <span>Settings</span></a></li>
 
         </ul><!-- /.sidebar-menu -->
       </section>
