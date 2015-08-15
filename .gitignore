@@ -1,7 +1,10 @@
 node_modules/
-bower_components/
-.sass-cache/
-.tmp/
-dist/
-.idea/
-*iml
+app/bower_components/
+src/app/bower_components/
+src/app/bundled.js
+src/assets/css/custom.css
+npm-debug.log
+.DS_Store
+dist
+.idea
+.tmp

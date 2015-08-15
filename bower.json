@@ -1,22 +1,21 @@
 {
-  "name": "bugfreeBeaconFrontend",
+  "name": "Beaconic",
   "version": "0.0.0",
+  "authors": [
+    ""
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "app/bower_components",
+    "test",
+    "tests"
+  ],
   "dependencies": {
-    "angular-animate": "~v1.4.0-rc.0",
-    "angular-cookies": "~v1.4.0-rc.0",
-    "angular-touch": "~v1.4.0-rc.0",
-    "angular-sanitize": "~v1.4.0-rc.0",
-    "restangular": "~1.4.0",
-    "angular-ui-router": "~0.2.13",
-    "bootstrap-sass-official": "~3.3.4",
-    "angular-bootstrap": "0.12.x",
-    "angular": "~v1.4.0-rc.0",
-    "angular-bootstrap-colorpicker": "~3.0.14"
-  },
-  "devDependencies": {
-    "angular-mocks": "~v1.4.0-rc.0"
-  },
-  "resolutions": {
-    "angular": "~v1.4.0-rc.0"
+    "jquery": "~2.1.1",
+    "animate.css": "~3.2.0",
+    "bootstrap": "~3.3.0",
+    "fontawesome": "~4.1.0"
   }
 }
