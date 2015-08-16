@@ -4,7 +4,7 @@ function OrderBeaconsController() {
 
     var vm = this;
 
-    vm.beacons_amount = 3;
+    vm.beaconsAmount = 3;
 
 }
 
