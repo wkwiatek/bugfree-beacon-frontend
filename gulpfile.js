@@ -12,6 +12,7 @@ var concat = require('gulp-concat');
 var less = require('gulp-less');
 var path = require('path');
 var bower = require('gulp-bower');
+var watch = require('gulp-watch');
 
 // tasks
 gulp.task('lint', function() {
@@ -90,11 +91,25 @@ gulp.task('less', function () {
 gulp.task('bower', function() {
   return bower();
 });
+gulp.task('watch', function () {
+  return watch([
+    './src/assets/**/*.css',
+    './src/index.html',
+    './src/app/*.js'
+  ])
+    .pipe(connect.reload());
+});
 
+gulp.task('watch-less', function () {
+  return gulp.watch('./src/assets/**/*.less', ['less']);
+});
+gulp.task('watch-js', function () {
+  return gulp.watch('./src/app/admin/**/*.js', ['browserify']);
+});
 
 // default task
 gulp.task('default',
-  ['lint', 'bower', 'browserify', 'connect', 'less']
+  ['lint', 'bower', 'browserify', 'connect', 'less', 'watch', 'watch-less', 'watch-js']
 );
 // build task
 gulp.task('build',
