@@ -1,13 +1,16 @@
 'use strict';
 
+// should not be required soon, watch: https://github.com/mgonto/restangular/pull/1088
+global._ = require('lodash');
+
 require('angular');
-require('angular-animate');
-require('angular-resource');
-require('angular-ui-router');
+require('restangular');
 
 angular.module('app', [
-  'ngAnimate',
-  'ui.router',
+  require('angular-animate'),
+  require('angular-ui-router'),
+
+  'restangular',
 
   require('./admin/').name
 ])

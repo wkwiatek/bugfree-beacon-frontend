@@ -5,7 +5,8 @@ function config($stateProvider) {
     url: '/beacons',
     templateUrl: 'app/admin/beacons/_views/beacons.view.html',
     controller: 'BeaconsController',
-    controllerAs: 'vm'
+    controllerAs: 'vm',
+    resolve: require('./_controllers/beacons.controller').resolve
   });
 }
 
