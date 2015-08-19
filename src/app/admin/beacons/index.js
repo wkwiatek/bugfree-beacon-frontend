@@ -1,6 +1,7 @@
 'use strict';
 
 module.exports = angular.module('app.beacons', [
+  require('./conversion').name,
+  require('./descriptions').name
 ])
-  .controller('BeaconsController', require('./_controllers/beacons.controller.js'))
   .config(require('./config'));

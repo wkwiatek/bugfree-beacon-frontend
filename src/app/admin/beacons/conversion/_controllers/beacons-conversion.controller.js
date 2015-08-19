@@ -1,19 +1,19 @@
 'use strict';
 
-function BeaconsController(beacons) {
+function BeaconsConversionController(beacons) {
 
   var vm = this;
 
   vm.content = 'Beacons content (from controller)';
 
-  vm.beaconz = beacons;
+  vm.beacons = beacons;
 
 }
 
-BeaconsController.resolve = {
+BeaconsConversionController.resolve = {
   beacons: function(Restangular) {
     return Restangular.all('beacons').getList();
   }
 };
 
-module.exports = BeaconsController;
+module.exports = BeaconsConversionController;

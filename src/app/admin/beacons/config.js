@@ -1,13 +1,26 @@
 'use strict';
 
 function config($stateProvider) {
-  $stateProvider.state('beacons', {
-    url: '/beacons',
-    templateUrl: 'app/admin/beacons/_views/beacons.view.html',
-    controller: 'BeaconsController',
-    controllerAs: 'vm',
-    resolve: require('./_controllers/beacons.controller').resolve
-  });
+  $stateProvider
+    .state('beacons', {
+      abstact: true,
+      url: '/beacons',
+      templateUrl: '/app/admin/beacons/_views/beacons.view.html'
+    })
+    .state('beacons.conversion', {
+      url: '/conversion',
+      templateUrl: '/app/admin/beacons/conversion/_views/beacons-conversion.view.html',
+      controller: 'BeaconsConversionController',
+      controllerAs: 'vm',
+      resolve: require('./conversion/_controllers/beacons-conversion.controller').resolve
+    })
+    .state('beacons.descriptions', {
+      url: '/descriptions',
+      templateUrl: '/app/admin/beacons/descriptions/_views/beacons-descriptions.view.html',
+      controller: 'BeaconsDescriptionsController',
+      controllerAs: 'vm',
+      resolve: require('./descriptions/_controllers/beacons-descriptions.controller').resolve
+    });
 }
 
 module.exports = config;
