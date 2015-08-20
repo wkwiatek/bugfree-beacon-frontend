@@ -20,6 +20,13 @@ function config($stateProvider) {
       controller: 'BeaconsDescriptionsController',
       controllerAs: 'vm',
       resolve: require('./descriptions/_controllers/beacons-descriptions.controller').resolve
+    })
+    .state('beacon', {
+        url: '/beacon/:beaconId',
+        templateUrl: '/app/admin/beacons/beacon/_views/beacon.view.html',
+        controller: 'BeaconController',
+        controllerAs: 'vm',
+        resolve: require('./beacon/_controllers/beacon.controller').resolve
     });
 }
 
