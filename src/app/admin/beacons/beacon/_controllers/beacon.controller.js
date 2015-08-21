@@ -3,16 +3,13 @@
 function BeaconController(beacon) {
 
     var vm = this;
-    vm.beaconId = beacon.id;
+    vm.beacon = beacon.data;
 
 }
 
 BeaconController.resolve = {
-    beacon: function($stateParams) {
-        //TODO: fetch from server by $stateParams.beaconId
-        return {
-            "id": $stateParams.beaconId
-        };
+    beacon: function($stateParams, Restangular) {
+        return Restangular.one('beacons', $stateParams.beaconId).get();
     }
 };
 

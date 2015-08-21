@@ -3,14 +3,60 @@
     <section class="content-header">
         <h1>Payments<small>Optional description</small></h1>
         <ol class="breadcrumb">
-            <li><a href="#"><i class="fa fa-dashboard"></i> Level</a></li>
+            <li><a href="#"><i class="fa fa-dashboard"></i> Payments</a></li>
             <li class="active">Here</li>
         </ol>
     </section>
 
     <section class="content">
 
-        <p ng-bind="vm.content"></p>
-
+        <div class="row">
+            <div class="col-xs-12">
+                <div class="box">
+                    <div class="box-body table-responsive no-padding">
+                        <table class="table table-hover">
+                            <tbody>
+                            <tr>
+                                <th>Date</th>
+                                <th>Netto price</th>
+                                <th>Title</th>
+                                <th>Status</th>
+                                <th>Invoice PDF</th>
+                            </tr>
+                            <tr>
+                                <td>22 Jun 2015, 10:40</td>
+                                <td>158,23 PLN</td>
+                                <td>Subscription 20 beacons</td>
+                                <td><span class="text-danger">not payed</span> <a href="#">pay now</a> </td>
+                                <td><a href="#">PRO-FORM <i class="fa fa-file-text-o"></i></a></td>
+                            </tr>
+                            <tr>
+                                <td>22 May 2015, 13:25</td>
+                                <td>200,50 PLN</td>
+                                <td>Subscription 30 beacons</td>
+                                <td>payed</td>
+                                <td><a href="#">2015/05/22/01 <i class="fa fa-file-text-o"></i></a></td>
+                            </tr>
+                            <tr>
+                                <td>15 Apr 2015, 13:25</td>
+                                <td>210,00 PLN</td>
+                                <td>Subscription 31 beacons</td>
+                                <td>payed</td>
+                                <td><a href="#">2015/04/15/01 <i class="fa fa-file-text-o"></i></a></td>
+                            </tr>
+                            </tbody></table>
+                    </div><!-- /.box-body -->
+                    <div class="box-footer clearfix">
+                        <ul class="pagination pagination-sm no-margin pull-right">
+                            <li><a href="#">«</a></li>
+                            <li><a href="#">1</a></li>
+                            <li><a href="#">2</a></li>
+                            <li><a href="#">3</a></li>
+                            <li><a href="#">»</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
     </section><!-- /.content -->
 </div><!-- /.content-wrapper -->

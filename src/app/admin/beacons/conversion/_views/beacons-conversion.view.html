@@ -1,13 +1,13 @@
-<div class="tab-pane">
-    <div class="row">
-        <div class="col-xs-12">
-            <div class="box">
-                <div class="box-header">
-                    <h3 class="box-title">5 beacons <span class="small">{{vm.beacons.length}} fetched from server</span> </h3>
-                </div><!-- /.box-header -->
-                <div class="box-body table-responsive no-padding">
-                    <table class="table table-hover">
-                        <tbody>
+<div class="row">
+    <div class="col-xs-12">
+        <div class="box">
+            <div class="box-header">
+                <h3 class="box-title">{{vm.beacons.length}} beacons</span></h3>
+            </div><!-- /.box-header -->
+            <div class="box-body table-responsive no-padding">
+                <table class="table table-hover">
+
+                    <thead>
                         <tr>
                             <th>Name</th>
                             <th>Approaches</th>
@@ -16,41 +16,29 @@
                             <th>Conversion 2</th>
                             <th>Main button</th>
                         </tr>
+                    </thead>
+
+                    <tbody ng-repeat="beacon in vm.beacons">
                         <tr>
-                            <td><a ui-sref="beacon({beaconId:1})">Product ABCD</a></td>
-                            <td>155</td>
-                            <td class="text-muted">9% &#10095;</td>
-                            <td>15</td>
-                            <td class="text-muted">30% &#10095;</td>
-                            <td>5</td>
+                            <td><a ui-sref="beacon({beaconId: beacon.id})">{{beacon.data.title}}</a></td>
+                            <td class="text-muted">(NYI)</td>
+                            <td class="text-muted">9% (NYI) &#10095;</td>
+                            <td class="text-muted">(NYI)</td>
+                            <td class="text-muted">30% (NYI) &#10095;</td>
+                            <td class="text-muted">(NYI)</td>
                         </tr>
-                        <tr>
-                            <td><a ui-sref="beacon({beaconId:2})">Product EFG</a></td>
-                            <td>125</td>
-                            <td class="text-muted">20% &#10095;</td>
-                            <td>25</td>
-                            <td class="text-muted">20% &#10095;</td>
-                            <td>5</td>
-                        </tr>
-                        <tr>
-                            <td><a ui-sref="beacon({beaconId:3})">Product HIJK</a></td>
-                            <td>115</td>
-                            <td class="text-muted">15% &#10095;</td>
-                            <td>15</td>
-                            <td class="text-muted">30% &#10095;</td>
-                            <td>5</td>
-                        </tr>
-                        </tbody></table>
-                </div><!-- /.box-body -->
-                <div class="box-footer clearfix">
-                    <ul class="pagination pagination-sm no-margin pull-right">
-                        <li><a href="#">«</a></li>
-                        <li><a href="#">1</a></li>
-                        <li><a href="#">2</a></li>
-                        <li><a href="#">3</a></li>
-                        <li><a href="#">»</a></li>
-                    </ul>
-                </div>
+                    </tbody>
+
+                </table>
+            </div><!-- /.box-body -->
+            <div class="box-footer clearfix">
+                <ul class="pagination pagination-sm no-margin pull-right">
+                    <li><a href="#">«</a></li>
+                    <li><a href="#">1</a></li>
+                    <li><a href="#">2</a></li>
+                    <li><a href="#">3</a></li>
+                    <li><a href="#">»</a></li>
+                </ul>
             </div>
         </div>
     </div>
