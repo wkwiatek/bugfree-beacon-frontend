@@ -1,0 +1,45 @@
+<div class="row">
+    <div class="col-xs-12">
+        <div class="box">
+            <div class="box-header">
+                <h3 class="box-title">{{vm.beacons.length}} beacons</span></h3>
+            </div><!-- /.box-header -->
+            <div class="box-body table-responsive no-padding">
+                <table class="table table-hover">
+
+                    <thead>
+                        <tr>
+                            <th>Name</th>
+                            <th>Approaches</th>
+                            <th>Conversion 1</th>
+                            <th>Item card</th>
+                            <th>Conversion 2</th>
+                            <th>Main button</th>
+                        </tr>
+                    </thead>
+
+                    <tbody ng-repeat="beacon in vm.beacons">
+                        <tr>
+                            <td><a ui-sref="beacon({beaconId: beacon.id})">{{beacon.data.title}}</a></td>
+                            <td class="text-muted">(NYI)</td>
+                            <td class="text-muted">9% (NYI) &#10095;</td>
+                            <td class="text-muted">(NYI)</td>
+                            <td class="text-muted">30% (NYI) &#10095;</td>
+                            <td class="text-muted">(NYI)</td>
+                        </tr>
+                    </tbody>
+
+                </table>
+            </div><!-- /.box-body -->
+            <div class="box-footer clearfix">
+                <ul class="pagination pagination-sm no-margin pull-right">
+                    <li><a href="#">«</a></li>
+                    <li><a href="#">1</a></li>
+                    <li><a href="#">2</a></li>
+                    <li><a href="#">3</a></li>
+                    <li><a href="#">»</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
