@@ -13,11 +13,12 @@
             <div class="col-md-12">
                 <div class="nav-tabs-custom">
                     <ul class="nav nav-tabs">
-                        <li class="active"><a ui-sref="beacons.conversion">Conversion</a></li>
-                        <li class=""><a ui-sref="beacons.descriptions">Descriptions</a></li>
+                        <li class="active"><a href="#tab_1" data-toggle="tab" aria-expanded="true">Conversion</a></li>
+                        <li><a href="#tab_2" data-toggle="tab" aria-expanded="true">Descriptions</a></li>
                     </ul>
                     <div class="tab-content">
-                        <ui-view></ui-view>
+                        <div class="tab-pane active" id="tab_1" ui-view="conversion"></div>
+                        <div class="tab-pane" id="tab_2" ui-view="descriptions"></div>
                     </div>
                 </div>
             </div>
