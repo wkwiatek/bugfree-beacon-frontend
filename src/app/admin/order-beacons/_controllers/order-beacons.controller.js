@@ -2,9 +2,9 @@
 
 function OrderBeaconsController() {
 
-    var vm = this;
+  var vm = this;
 
-    vm.beaconsAmount = 3;
+  vm.beaconsAmount = 3;
 
 }
 

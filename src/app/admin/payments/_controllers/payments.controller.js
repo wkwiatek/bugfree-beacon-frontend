@@ -2,9 +2,9 @@
 
 function PaymentsController() {
 
-    var vm = this;
+  var vm = this;
 
-    vm.content = 'Payments (from controller)';
+  vm.content = 'Payments (from controller)';
 
 }
 

@@ -16,8 +16,8 @@
                         </tr>
                     </thead>
 
-                    <tbody ng-repeat="beacon in vm.beacons">
-                        <tr>
+                    <tbody>
+                        <tr ng-repeat="beacon in vm.beacons">
                             <td><a ui-sref="beacon({beaconId: beacon.id})">{{beacon.data.title}}</a></td>
                             <td>{{beacon.data.subtitle}}</td>
                             <td class="pull-right text-mute">0,3 day (NYI)</td>
