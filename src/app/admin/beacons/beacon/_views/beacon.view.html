@@ -11,20 +11,82 @@
     <section class="content">
 
         <div class="row">
-            <div class="col-md-12">
+            <div class="col-md-8">
                 <div class="nav-tabs-custom">
                     <ul class="nav nav-tabs">
-                        <li class="active"><a href="#tab_1" data-toggle="tab" aria-expanded="true">Beacon data</a></li>
-                        <li class=""><a href="#tab_2" data-toggle="tab" aria-expanded="false">Edit</a></li>
+                        <li class="active"><a href="#tab_1" data-toggle="tab" aria-expanded="true">Statistics</a></li>
+                        <li><a href="#tab_2" data-toggle="tab" aria-expanded="true">Beacon data</a></li>
+                        <li class=""><a href="#tab_3" data-toggle="tab" aria-expanded="false">Edit</a></li>
                     </ul>
                     <div class="tab-content">
                         <div class="tab-pane active" id="tab_1">
-                            <p>Tab 1</p>
+                            <div class="box">
+                                <div class="box-body">
+                                    <div class="col-md-12">
+                                        <div class="row">
+
+                                            <div class="col-md-5">
+                                                <div class="form-group">
+                                                    <div class="btn-group">
+                                                        <button type="button" class="btn btn-default btn-flat">Approaches</button>
+                                                        <button type="button" class="btn btn-default btn-flat dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
+                                                            <span class="caret"></span>
+                                                            <span class="sr-only">Toggle Dropdown</span>
+                                                        </button>
+                                                        <ul class="dropdown-menu" role="menu">
+                                                            <li><a href="#">Approaches</a></li>
+                                                            <li><a href="#">Item card</a></li>
+                                                            <li><a href="#">Main button</a></li>
+                                                        </ul>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-2"></div>
+
+                                            <div class="col-md-5 pull-right">
+                                                <div class="form-group">
+                                                    <div class="input-group">
+                                                        <div class="input-group-addon">
+                                                            <i class="fa fa-calendar"></i>
+                                                        </div>
+                                                        <input type="text" class="form-control pull-right active">
+                                                    </div><!-- /.input group -->
+                                                </div>
+                                            </div>
+
+                                        </div>
+
+                                        <div class="row">
+                                            <div class="col-md-12">
+                                                <canvas tc-chartjs-line chart-options="vm.options" chart-data="vm.data"></canvas>
+                                            </div>
+                                        </div>
+
+                                        <div class="row">
+                                            <p>Basic stats</p>
+                                        </div>
+
+                                        <div class="row">
+                                            <p>Detailed stats</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+
                         </div><!-- /.tab-pane -->
                         <div class="tab-pane" id="tab_2">
                             <p>Tab 2</p>
                         </div><!-- /.tab-pane -->
+                        <div class="tab-pane" id="tab_3">
+                            <p>Tab 3</p>
+                        </div><!-- /.tab-pane -->
                     </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="row">
+                    <img src="assets/img/nexus_5.png" style="height: 80%; width: 80%">
                 </div>
             </div>
         </div>
