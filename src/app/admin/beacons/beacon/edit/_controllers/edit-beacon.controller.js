@@ -6,8 +6,8 @@ function EditBeaconController(beacon) {
   vm.beacon = beacon;
 
   vm.update = function() {
-    vm.beacon.save();
-  }
+    vm.beacon.put();
+  };
 
 }
 

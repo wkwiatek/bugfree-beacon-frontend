@@ -15,7 +15,7 @@ function config($stateProvider) {
           templateUrl: '/app/admin/beacons/beacon/edit/_views/edit-beacon.view.html',
           controller: 'EditBeaconController',
           controllerAs: 'vm',
-          resolve: require('./_controllers/beacon.controller').resolve
+          resolve: require('./edit/_controllers/edit-beacon.controller').resolve
         }
       }
     });

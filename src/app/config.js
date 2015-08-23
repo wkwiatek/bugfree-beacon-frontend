@@ -9,6 +9,12 @@ function config($locationProvider, $urlRouterProvider, RestangularProvider) {
   $urlRouterProvider.otherwise('beacons');
 
   RestangularProvider.setBaseUrl('http://bejkon.herokuapp.com');
+  RestangularProvider.setResponseInterceptor(function(data, operation, what) {
+    if (operation === 'getList') {
+      return data;
+    }
+    return data.data;
+  });
 }
 
 module.exports = config;
