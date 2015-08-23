@@ -11,6 +11,7 @@ angular.module('app', [
   require('angular-ui-router'),
 
   'restangular',
+  'tc.chartjs',
 
   require('./admin/').name
 ])
