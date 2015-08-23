@@ -21,13 +21,6 @@ function config($stateProvider) {
           resolve: resolveAllBeacons
         }
       }
-    })
-    .state('beacon', {
-      url: '/beacons/:beaconId',
-      templateUrl: '/app/admin/beacons/beacon/_views/beacon.view.html',
-      controller: 'BeaconController',
-      controllerAs: 'vm',
-      resolve: require('./beacon/_controllers/beacon.controller').resolve
     });
 }
 
