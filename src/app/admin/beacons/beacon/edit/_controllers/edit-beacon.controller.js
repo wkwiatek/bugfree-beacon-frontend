@@ -1,12 +1,18 @@
 'use strict';
 
-function EditBeaconController(beacon) {
+function EditBeaconController($timeout, beacon) {
 
   var vm = this;
   vm.beacon = beacon;
 
   vm.update = function() {
-    vm.beacon.put();
+    vm.beacon.put().then(function() {
+      // TODO: make directive for alerts
+      vm.updatedSuccessfully = true;
+      $timeout(function(){
+        vm.updatedSuccessfully = false;
+      }, 5000);
+    });
   };
 
 }
