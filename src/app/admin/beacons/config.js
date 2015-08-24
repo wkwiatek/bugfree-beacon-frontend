@@ -11,16 +11,15 @@ function config($stateProvider) {
         'conversion@beacons': {
           templateUrl: '/app/admin/beacons/conversion/_views/beacons-conversion.view.html',
           controller: 'BeaconsConversionController',
-          controllerAs: 'vm',
-          resolve: resolveAllBeacons
+          controllerAs: 'vm'
         },
         'descriptions@beacons': {
           templateUrl: '/app/admin/beacons/descriptions/_views/beacons-descriptions.view.html',
           controller: 'BeaconsDescriptionsController',
-          controllerAs: 'vm',
-          resolve: resolveAllBeacons
+          controllerAs: 'vm'
         }
-      }
+      },
+      resolve: resolveAllBeacons
     });
 }
 
