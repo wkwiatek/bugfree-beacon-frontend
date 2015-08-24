@@ -5,11 +5,13 @@ function EditBeaconController($timeout, beacon) {
   var vm = this;
   vm.beacon = beacon;
 
+  vm.imageUrl = vm.beacon.data.imageUrl + '?' + new Date().getTime();
+
   vm.update = function() {
     vm.beacon.put().then(function() {
       // TODO: make directive for alerts
       vm.updatedSuccessfully = true;
-      $timeout(function(){
+      $timeout(function() {
         vm.updatedSuccessfully = false;
       }, 5000);
     });
