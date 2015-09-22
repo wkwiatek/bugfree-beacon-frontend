@@ -5,7 +5,8 @@ function config($stateProvider) {
         url: '/settings',
         templateUrl: 'app/admin/settings/_views/settings.view.html',
         controller: 'SettingsController',
-        controllerAs: 'vm'
+        controllerAs: 'vm',
+        resolve: require('./_controllers/settings.controller').resolve
     });
 }
 
