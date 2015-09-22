@@ -43,30 +43,30 @@
                                         <form role="form" ng-submit="vm.update()">
                                             <div class="form-group">
                                                 <label for="invoiceEmail">Company name</label>
-                                                <input type="text" class="form-control" id="invoiceEmail" placeholder="Enter company name" ng-model="vm.invoice.data.companyName">
+                                                <input type="text" class="form-control" id="invoiceEmail" placeholder="Enter company name" ng-model="vm.invoice.companyName">
                                             </div>
 
                                             <div class="form-group">
                                                 <label for="taxNumber">NIP</label>
-                                                <input type="text" class="form-control" id="taxNumber" placeholder="Enter NIP" ng-model="vm.invoice.data.taxNumber">
+                                                <input type="text" class="form-control" id="taxNumber" placeholder="Enter NIP" ng-model="vm.invoice.taxNumber">
                                             </div>
 
                                             <div class="form-group">
                                                 <label for="address">Address</label>
-                                                <input type="text" class="form-control" id="address" placeholder="Enter address" ng-model="vm.invoice.data.address">
+                                                <input type="text" class="form-control" id="address" placeholder="Enter address" ng-model="vm.invoice.address">
                                             </div>
 
                                             <div class="form-group">
                                                 <label for="postalCode">Zip-code</label>
-                                                <input type="text" class="form-control" id="postalCode" placeholder="Enter postal code" ng-model="vm.invoice.data.postalCode">
+                                                <input type="text" class="form-control" id="postalCode" placeholder="Enter postal code" ng-model="vm.invoice.postalCode">
                                             </div>
 
                                             <div class="form-group">
                                                 <label for="city">City</label>
-                                                <input type="text" class="form-control" id="city" placeholder="Enter city" ng-model="vm.invoice.data.city">
+                                                <input type="text" class="form-control" id="city" placeholder="Enter city" ng-model="vm.invoice.city">
                                             </div>
 
-                                            <button type="submit" class="btn btn-primary pull-right">Update</button>
+                                            <button type="submit" class="btn btn-primary pull-right" ng-disabled="vm.updating">Update</button>
                                         </form>
                                     </div>
                                 </div>
