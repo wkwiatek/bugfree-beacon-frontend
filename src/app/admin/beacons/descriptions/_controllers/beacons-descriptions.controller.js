@@ -11,7 +11,7 @@ function BeaconsDescriptionsController(beacons) {
     };
 
     angular.forEach(beacons, function (value) {
-        value.class = vm.determineClass(value.state!=null ? value.state.batteryLevel : 0);
+        value.class = vm.determineClass(value.state !== null ? value.state.batteryLevel : 0);
     });
 
     vm.beacons = beacons;
