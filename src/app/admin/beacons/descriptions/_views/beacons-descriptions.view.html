@@ -18,10 +18,10 @@
 
                     <tbody>
                         <tr ng-repeat="beacon in vm.beacons">
-                            <td><a ui-sref="beacon({beaconId: beacon.id})">{{beacon.data.title}}</a></td>
-                            <td>{{beacon.data.subtitle}}</td>
+                            <td><a ui-sref="beacon({beaconId: beacon.id})" ng-bind="beacon.data.title"></a></td>
+                            <td ng-bind="beacon.data.subtitle"></td>
                             <td class="pull-right text-mute">0,3 day (NYI)</td>
-                            <td><span class="label label-info">5%</span></td>
+                            <td><span class="label " ng-class="beacon.class" ng-bind="beacon.state.batteryLevel + '%'"></span></td>
                         </tr>
                     </tbody>
 
