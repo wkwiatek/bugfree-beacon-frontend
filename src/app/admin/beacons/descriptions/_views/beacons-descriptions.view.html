@@ -3,30 +3,34 @@
         <div class="box">
             <div class="box-header">
                 <h3 class="box-title">{{vm.beacons.length}} beacons</span></h3>
-            </div><!-- /.box-header -->
+            </div>
+            <!-- /.box-header -->
 
             <div class="box-body table-responsive no-padding">
                 <table class="table table-hover">
                     <thead>
-                        <tr>
-                            <th>Name</th>
-                            <th>Subtitle</th>
-                            <th></th>
-                            <th>Battery</th>
-                        </tr>
+                    <tr>
+                        <th>Name</th>
+                        <th>Subtitle</th>
+                        <th></th>
+                        <th>Battery</th>
+                    </tr>
                     </thead>
 
                     <tbody>
-                        <tr ng-repeat="beacon in vm.beacons">
-                            <td><a ui-sref="beacon({beaconId: beacon.id})" ng-bind="beacon.data.title"></a></td>
-                            <td ng-bind="beacon.data.subtitle"></td>
-                            <td class="pull-right text-mute">0,3 day (NYI)</td>
-                            <td><span class="label " ng-class="beacon.class" ng-bind="beacon.state.batteryLevel ? beacon.state.batteryLevel + '%' : null"></span></td>
-                        </tr>
+                    <tr ng-repeat="beacon in vm.beacons">
+                        <td><a ui-sref="beacon({beaconId: beacon.id})">{{beacon.data.title}}</a></td>
+                        <td>{{beacon.data.subtitle}}</td>
+                        <td class="pull-right text-mute">0,3 day (NYI)</td>
+                        <td><span class="label " ng-class="{'label-danger': beacon.state.batteryLevel < 15,
+                            'label-warning': beacon.state.batteryLevel >= 15 && beacon.state.batteryLevel < 50,
+                            'label-success':beacon.state.batteryLevel >50}">{{beacon.state.batteryLevel}}%</span></td>
+                    </tr>
                     </tbody>
 
                 </table>
-            </div><!-- /.box-body -->
+            </div>
+            <!-- /.box-body -->
             <div class="box-footer clearfix">
                 <ul class="pagination pagination-sm no-margin pull-right">
                     <li><a href="#">«</a></li>
