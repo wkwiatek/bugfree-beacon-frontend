@@ -1,0 +1,60 @@
+<div class="row">
+    <div class="col-md-4">
+        <h3>Login credentials</h3>
+
+        <form role="form">
+            <div class="form-group">
+                <label for="exampleInputLogin">Login</label>
+                <input type="text" class="form-control" id="exampleInputLogin" placeholder="Enter login" value="someuser@gmail.com" disabled>
+            </div>
+
+            <button type="submit" class="btn btn-primary pull-right">Reset password</button>
+        </form>
+    </div>
+    <div class="col-md-4">
+        <div>
+            <h3>Invoice data</h3>
+            <!-- form start -->
+
+            <form ng-submit="vm.update()">
+
+                <!-- TODO: make directive for alerts -->
+                <div ng-show="vm.updatedSuccessfully" class="alert alert-success">
+                    <span class="glyphicon glyphicon-ok-sign"></span>
+                    Beacon's data updated successfully
+                </div>
+                
+                <div class="form-group">
+                    <label for="exampleInputEmail">Company name</label>
+                    <input ng-model="vm.invoiceData.companyName" type="text" class="form-control" id="exampleInputEmail" placeholder="Enter company name">
+                </div>
+
+                <div class="form-group">
+                    <label for="exampleInputNip">NIP</label>
+                    <input ng-model="vm.invoiceData.taxNumber" type="text" class="form-control" id="exampleInputNip" placeholder="Enter NIP">
+                </div>
+
+                <div class="form-group">
+                    <label for="exampleInputAddress">Address</label>
+                    <input ng-model="vm.invoiceData.address" type="text" class="form-control" id="exampleInputAddress" placeholder="Enter address">
+                </div>
+
+                <div class="form-group">
+                    <label for="exampleInputZip">Zip-code</label>
+                    <input ng-model="vm.invoiceData.postalCode" type="text" class="form-control" id="exampleInputZip" placeholder="Enter zip code">
+                </div>
+
+                <div class="form-group">
+                    <label for="exampleInputCity">City</label>
+                    <input ng-model="vm.invoiceData.city" type="text" class="form-control" id="exampleInputCity" placeholder="Enter city">
+                </div>
+
+                <button type="submit" class="btn btn-primary pull-right">Update</button>
+            </form>
+        </div>
+    </div>
+
+    <div class="col-md-4">
+
+    </div>
+</div>
