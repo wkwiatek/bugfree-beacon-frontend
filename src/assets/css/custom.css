@@ -1,7 +1,6 @@
 .content-wrapper {
   min-height: calc(100vh - 101px) !important;
 }
-
 .app-shape {
   width: 100px;
   height: 100px;
