@@ -1,7 +1,7 @@
 <div class="content-wrapper">
 
     <section class="content-header">
-        <h1>Payments<small>Optional description</small></h1>
+        <h1>Payments<small>Manage your payments</small></h1>
         <ol class="breadcrumb">
             <li><a href="#"><i class="fa fa-dashboard"></i> Payments</a></li>
             <li class="active">Here</li>
@@ -9,7 +9,6 @@
     </section>
 
     <section class="content">
-
         <div class="row">
             <div class="col-xs-12">
                 <div class="box">
@@ -23,26 +22,29 @@
                                 <th>Status</th>
                                 <th>Invoice PDF</th>
                             </tr>
-                            <tr>
-                                <td>22 Jun 2015, 10:40</td>
-                                <td>158,23 PLN</td>
-                                <td>Subscription 20 beacons</td>
-                                <td><span class="text-danger">not payed</span> <a href="#">pay now</a> </td>
-                                <td><a href="#">PRO-FORM <i class="fa fa-file-text-o"></i></a></td>
-                            </tr>
-                            <tr>
-                                <td>22 May 2015, 13:25</td>
-                                <td>200,50 PLN</td>
-                                <td>Subscription 30 beacons</td>
-                                <td>payed</td>
-                                <td><a href="#">2015/05/22/01 <i class="fa fa-file-text-o"></i></a></td>
-                            </tr>
-                            <tr>
-                                <td>15 Apr 2015, 13:25</td>
-                                <td>210,00 PLN</td>
-                                <td>Subscription 31 beacons</td>
-                                <td>payed</td>
-                                <td><a href="#">2015/04/15/01 <i class="fa fa-file-text-o"></i></a></td>
+
+                            <tr ng-repeat="payment in vm.payments">
+                                <td>{{payment.createdAt | date:'longDate'}}</td>
+                                <td>{{payment.price | number: 2}}</td>
+                                <td>{{payment.title}}</td>
+                                <td>
+                                    <div ng-switch="payment.payed">
+                                        <span ng-switch-when="true">payed</span>
+                                        <span ng-switch-default>
+                                            <span class="text-danger">not payed</span> <a href="#">pay now</a>
+                                        </span>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div ng-switch="payment.payed">
+                                        <span ng-switch-when="true">
+                                            <a href="#">{{payment.createdAt | date:'yyyy/MM/dd'}} <i class="fa fa-file-text-o"></i></a>
+                                        </span>
+                                        <span ng-switch-default>
+                                            <a href="#">PRO-FORM <i class="fa fa-file-text-o"></i></a>
+                                        </span>
+                                    </div>
+                                </td>
                             </tr>
                             </tbody></table>
                     </div><!-- /.box-body -->

@@ -10,9 +10,6 @@ function config($locationProvider, $urlRouterProvider, RestangularProvider) {
 
   RestangularProvider.setBaseUrl('http://bejkon.herokuapp.com');
   RestangularProvider.setResponseInterceptor(function(data, operation, what) {
-    if (operation === 'getList') {
-      return data;
-    }
     return data.data;
   });
 }

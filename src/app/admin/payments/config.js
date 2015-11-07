@@ -5,7 +5,9 @@ function config($stateProvider) {
     url: '/payments',
     templateUrl: 'app/admin/payments/_views/payments.view.html',
     controller: 'PaymentsController',
-    controllerAs: 'vm'
+    controllerAs: 'vm',
+    resolve: require('./_controllers/payments.controller').resolve
+
   });
 }
 
