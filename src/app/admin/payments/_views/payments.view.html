@@ -38,10 +38,10 @@
                                 <td>
                                     <div ng-switch="payment.payed">
                                         <span ng-switch-when="true">
-                                            <a href="#">{{payment.createdAt | date:'yyyy/MM/dd'}} <i class="fa fa-file-text-o"></i></a>
+                                            <a href="{{payment.documentUrl}}">{{payment.createdAt | date:'yyyy/MM/dd'}} <i class="fa fa-file-text-o"></i></a>
                                         </span>
                                         <span ng-switch-default>
-                                            <a href="#">PRO-FORM <i class="fa fa-file-text-o"></i></a>
+                                            <a href="{{payment.documentUrl}}">PRO-FORM <i class="fa fa-file-text-o"></i></a>
                                         </span>
                                     </div>
                                 </td>
