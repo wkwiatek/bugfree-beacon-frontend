@@ -1,6 +1,6 @@
 'use strict';
 
-function EditBeaconController($timeout, beacon) {
+function EditBeaconController($http, $timeout, beacon, API_BASE_URL) {
 
   var vm = this;
   vm.beacon = beacon;
@@ -9,6 +9,14 @@ function EditBeaconController($timeout, beacon) {
 
   vm.update = function() {
     vm.beacon.put().then(function() {
+
+      var fd = new FormData();
+      fd.append('file', vm.file);
+      $http.post(API_BASE_URL + '/beacons/' + vm.beacon.id + '/photo', fd, {
+        transformRequest: angular.identity,
+        headers: {'Content-Type': undefined }
+      });
+
       // TODO: make directive for alerts
       vm.updatedSuccessfully = true;
       $timeout(function() {

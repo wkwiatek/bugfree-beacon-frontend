@@ -24,6 +24,7 @@
     "gulp-uglify": "^0.3.1",
     "gulp-watch": "^4.3.4",
     "lodash": "^3.10.1",
+    "ng-file-upload": "^7.0.17",
     "restangular": "^1.5.1"
   },
   "engines": {
