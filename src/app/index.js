@@ -16,5 +16,5 @@ angular.module('app', [
 
   require('./admin/').name
 ])
-.constant('API_BASE_URL', 'http://bejkon.herokuapp.com')
+.constant('API_BASE_URL', 'https://bejkon.herokuapp.com')
 .config(require('./config'));
