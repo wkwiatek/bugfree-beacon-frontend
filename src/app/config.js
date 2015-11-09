@@ -1,6 +1,6 @@
 'use strict';
 
-function config($locationProvider, $urlRouterProvider, RestangularProvider) {
+function config($locationProvider, $urlRouterProvider, RestangularProvider, API_BASE_URL) {
   $locationProvider.html5Mode({
     enabled: true,
     requireBase: false
@@ -8,7 +8,7 @@ function config($locationProvider, $urlRouterProvider, RestangularProvider) {
 
   $urlRouterProvider.otherwise('beacons');
 
-  RestangularProvider.setBaseUrl('http://bejkon.herokuapp.com');
+  RestangularProvider.setBaseUrl(API_BASE_URL);
   RestangularProvider.setResponseInterceptor(function(data, operation, what) {
     if (operation === 'getList') {
       return data;
