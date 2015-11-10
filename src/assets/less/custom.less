@@ -1,3 +1,17 @@
+@import (inline) "../../../node_modules/angular-loading-bar/src/loading-bar.css";
+
+@spinner-color: #fff;
+
+// customize spinner
+#loading-bar-spinner .spinner-icon {
+  border-top-color: @spinner-color;
+  border-left-color: @spinner-color;
+}
+
+#loading-bar .bar {
+  background: @spinner-color;
+}
+
 .content-wrapper {
   min-height: calc(~"100vh - 101px") !important;
 }

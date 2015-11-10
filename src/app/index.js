@@ -10,9 +10,11 @@ angular.module('app', [
   require('angular-animate'),
   require('angular-ui-router'),
   require('ng-file-upload'),
+  require('angular-loading-bar'),
 
   'restangular',
   'tc.chartjs',
+  'ngAnimate',
 
   require('./admin/').name
 ])
