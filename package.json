@@ -8,6 +8,7 @@
   "dependencies": {
     "angular": "^1.4.3",
     "angular-animate": "^1.4.3",
+    "angular-loading-bar": "^0.8.0",
     "angular-ui-router": "^0.2.15",
     "bower": "^1.4.1",
     "browserify": "^5.10.0",
