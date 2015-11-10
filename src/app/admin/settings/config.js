@@ -2,7 +2,7 @@
 
 function config($stateProvider) {
   $stateProvider
-    .state('settings', {
+    .state('admin.settings', {
       url: '/settings',
       views: {
         '': {
@@ -11,13 +11,13 @@ function config($stateProvider) {
           controllerAs: 'vm',
           resolve: require('./_controllers/settings.controller').resolve
         },
-        'basic-info@settings': {
+        'basic-info@admin.settings': {
           templateUrl: '/app/admin/settings/basic-info/_views/basic-info.view.html',
           controller: 'BasicInfoController',
           controllerAs: 'vm',
           resolve: require('./basic-info/_controllers/basic-info.controller').resolve
         },
-        'translations@settings': {
+        'translations@admin.settings': {
           templateUrl: '/app/admin/settings/translations/_views/translations.view.html',
           controller: 'TranslationsController',
           controllerAs: 'vm',

@@ -6,4 +6,5 @@ module.exports = angular.module('app.admin', [
   require('./order-beacons/').name,
   require('./payments/').name,
   require('./settings/').name
-]);
+])
+  .config(require('./config'));
