@@ -16,7 +16,8 @@ angular.module('app', [
   'tc.chartjs',
   'ngAnimate',
 
-  require('./admin/').name
+  require('./admin/').name,
+  require('./login/').name
 ])
 .constant('API_BASE_URL', 'https://bejkon.herokuapp.com')
 .config(require('./config'));

@@ -2,7 +2,7 @@
 
 function config($stateProvider) {
   $stateProvider
-    .state('beacon', {
+    .state('admin.beacon', {
       url: '/beacons/:beaconId',
       views: {
         '': {
@@ -11,7 +11,7 @@ function config($stateProvider) {
           controllerAs: 'vm',
           resolve: require('./_controllers/beacon.controller').resolve
         },
-        'edit@beacon': {
+        'edit@admin.beacon': {
           templateUrl: '/app/admin/beacons/beacon/edit/_views/edit-beacon.view.html',
           controller: 'EditBeaconController',
           controllerAs: 'vm',

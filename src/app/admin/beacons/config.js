@@ -2,18 +2,18 @@
 
 function config($stateProvider) {
   $stateProvider
-    .state('beacons', {
+    .state('admin.beacons', {
       url: '/beacons',
       views: {
         '': {
           templateUrl: '/app/admin/beacons/_views/beacons.view.html'
         },
-        'conversion@beacons': {
+        'conversion@admin.beacons': {
           templateUrl: '/app/admin/beacons/conversion/_views/beacons-conversion.view.html',
           controller: 'BeaconsConversionController',
           controllerAs: 'vm'
         },
-        'descriptions@beacons': {
+        'descriptions@admin.beacons': {
           templateUrl: '/app/admin/beacons/descriptions/_views/beacons-descriptions.view.html',
           controller: 'BeaconsDescriptionsController',
           controllerAs: 'vm'

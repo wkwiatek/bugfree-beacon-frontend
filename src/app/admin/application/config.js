@@ -1,7 +1,7 @@
 'use strict';
 
 function config($stateProvider) {
-  $stateProvider.state('application', {
+  $stateProvider.state('admin.application', {
     url: '/application',
     views: {
       '': {
@@ -9,7 +9,7 @@ function config($stateProvider) {
         controller: 'ApplicationController',
         controllerAs: 'vm'
       },
-      'shape@application': {
+      'shape@admin.application': {
         templateUrl: 'app/admin/application/shape/_views/shape.view.html',
         controller: 'ShapeController',
         controllerAs: 'vm'
