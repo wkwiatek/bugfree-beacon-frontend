@@ -1,0 +1,118 @@
+<div class="box">
+    <div class="box-body">
+        <div class="col-md-12">
+            <div class="row">
+                <div class="nav-tabs-custom">
+                    <ul class="nav nav-tabs">
+                        <li class="line-li active">
+                            <div class="row">
+                                <a class="col-md-12" data-target="#ll_tab_1" data-toggle="tab">
+                                    <div class="col-md-12 text-center">
+                                        <img src="assets/img/line1.png" class="line-shape"/>
+                                    </div>
+                                    <span class="col-md-12 line-span-desc">
+                                        <h3>Rozmieszczenie nieliniowe i gęste np.sklep lub muzeum</h3>
+                                        <p>Lista dla przedmiotów umieszczonych obok siebie w nieliniowy sposób</p>
+                                    </span>
+                                </a>
+                            </div>
+                        </li>
+                        <li class="line-li">
+                            <div class="row">
+                                <a class="col-md-12 line-foo" data-target="#ll_tab_2" data-toggle="tab">
+                                    <div class="col-md-12 text-center">
+                                        <img src="assets/img/line2.png" class="line-shape"/>
+                                    </div>
+                                    <span class="col-md-12 line-span-desc">
+                                        <h3>Rozmieszczenie liniowe z odstępami, np. trasa zwiedzania</h3>
+                                        <p>Lista dla przedmiotów umieszczonych na trasie. Wiadomo, jaki przedmiot będzie
+                                            następny</p>
+                                    </span>
+                                </a>
+                            </div>
+                        </li>
+                    </ul>
+                    <div class="tab-content">
+                        <div class="tab-pane active" id="ll_tab_1">
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="row">
+                                        <div class="col-md-12 text-center">
+                                            <img src="assets/img/r1.jpg" class="line-desc-shape"/>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            <input type="radio" name="shape" value="CIRCLE">&nbsp;
+                                            <strong>Miniaturka z nazwą</strong>
+
+                                            <p>Przedmioty są wyświetlane jako miniaturka oraz nazwa. Wybierz to dla
+                                                ludzi lub produktów, które ciężko jest rozróżnić po zdjęciach</p></div>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="row">
+                                        <div class="col-md-12 text-center">
+                                            <img src="assets/img/r2.jpg" class="line-desc-shape"/>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            <input type="radio" name="shape" value="RECTANGLE">&nbsp;
+                                            <strong>Same miniaturki</strong>
+
+                                            <p>Przedmioty są widoczne tylko jako miniaturki w układzie trzech kolumn.
+                                                Wybierz to dla przedmiotów, które łatwo jest rozróżnić po zdjęciach</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- /.tab-pane -->
+                        <div class="tab-pane" id="ll_tab_2">
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="row">
+                                        <div class="col-md-12 text-center">
+                                            <img src="assets/img/s1.jpg" class="line-desc-shape"/>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            <input type="radio" name="shape" value="CIRCLE">&nbsp;
+                                            <strong>Miniaturka z nazwą</strong>
+
+                                            <p>Przedmioty są wyświetlane jako miniaturka oraz nazwa. Wybierz to dla
+                                                ludzi lub produktów, które ciężko jest rozróżnić po zdjęciach</p></div>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="row">
+                                        <div class="col-md-12 text-center">
+                                            <img src="assets/img/s2.jpg" class="line-desc-shape"/>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            <input type="radio" name="shape" value="RECTANGLE">&nbsp;
+                                            <strong>Same miniaturki</strong>
+
+                                            <p>Przedmioty są widoczne tylko jako miniaturki w układzie trzech kolumn.
+                                                Wybierz to dla przedmiotów, które łatwo jest rozróżnić po zdjęciach</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                        <!-- /.tab-pane -->
+                    </div>
+                    <!-- /.tab-content -->
+                </div>
+            </div>
+            <div class="row pull-right" style="padding-top: 20px">
+                <button type="submit" class="btn btn-primary" ng-click="vm.shapeNextBtn()">Next step</button>
+            </div>
+        </div>
+    </div>
+</div>

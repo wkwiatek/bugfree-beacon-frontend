@@ -13,6 +13,11 @@ function config($stateProvider) {
         templateUrl: 'app/admin/application/shape/_views/shape.view.html',
         controller: 'ShapeController',
         controllerAs: 'vm'
+      },
+      'list-layout@application': {
+        templateUrl: 'app/admin/application/list-layout/_views/list-layout.view.html',
+        controller: 'ListLayoutController',
+        controllerAs: 'vm'
       }
     }
   });
